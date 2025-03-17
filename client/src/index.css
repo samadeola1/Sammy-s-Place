@@ -1,0 +1,9 @@
+body{
+    max-width: 1600px;
+    margin: 0 auto
+    
+}
+
+.main-wrapper{
+  @apply bg-[url('../src/assets/Hero-bg.svg')]
+}
