@@ -20,7 +20,7 @@ const Hero = () => {
           </h3>
           <div className="flex gap-[12px] py-15">
             <h3 className="border bg-[#B67B0F] rounded-[31px] px-[35px] md:px-[56px] text-[20px]  py-[15px] items-center ">
-              Order now!
+              Order now
             </h3>
             <h3 className="border bg-[#FBFBFB] rounded-[32px] px-[10px] md:px-[20px] py-[15px] text-[20px] text-[#100101] text-center">
               View Menu
