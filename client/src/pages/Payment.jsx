@@ -48,7 +48,7 @@ const Payment = () => {
         ) : (
           <main className="bg-[#2F2F2F]">
             {/* section for  cart  */}
-            <section className="text-white wrapper grid lg:grid-cols-3 gap-[20px] py-5 ">
+            <section className="text-white wrapper grid lg:grid-cols-3 gap-[20px] py-5 lg:px-[130px] ">
               {/* div for  information  */}
               <div className="lg:col-span-2 bg-black rounded-[8px] py-3 p-[15px]">
                 <Information/>

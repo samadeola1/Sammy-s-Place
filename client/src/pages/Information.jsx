@@ -71,45 +71,56 @@ const Information = () => {
   };
 
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Payment Page</h1>
-
+    <div className="">
       {/* Recipient Information Section */}
-      <div className="mb-6">
-        <h2 className="text-xl font-semibold mb-2">Recipient Information</h2>
-        <button
-          onClick={() => setShowRecipientModal(true)}
-          className="bg-[#B67B0F] text-white px-4 py-2 rounded hover:bg-[#A56C0D]"
-        >
-          {recipientInfo.fullName
-            ? "Edit Recipient Info"
-            : "Add Recipient Info"}
-        </button>
+      <div className=" bg-[#252422] mb-6 border rounded-[11px]">
+        <div className="flex justify-between">
+          <h2 className="text-xl font-semibold mt-6 mx-4">
+            Recipient Information
+          </h2>
+
+          <button
+            onClick={() => setShowRecipientModal(true)}
+            className="text-[#B67B0F] mx-4 px-4 py-2 my-4"
+          >
+            {recipientInfo.fullName
+              ? "Edit"
+              : "Add"}
+          </button>
+        </div>
+        <hr className="mx-4" />
+
         {recipientInfo.fullName && (
           <div className="mt-4">
-            <p>Full Name: {recipientInfo.fullName}</p>
-            <p>Phone Number: {recipientInfo.phoneNumber}</p>
-            <p>Email: {recipientInfo.email}</p>
+            <p className= "mx-4 my-2">{recipientInfo.fullName}</p>
+            <p className= "mx-4 my-2">{recipientInfo.phoneNumber}</p>
+            <p className= "mx-4 my-2">{recipientInfo.email}</p>
           </div>
         )}
       </div>
 
       {/* Delivery Information Section */}
-      <div className="mb-6">
-        <h2 className="text-xl font-semibold mb-2">Delivery Information</h2>
-        <button
-          onClick={() => setShowDeliveryModal(true)}
-          className="bg-[#B67B0F] text-white px-4 py-2 rounded hover:bg-[#A56C0D]"
-        >
-          {deliveryInfo.address
-            ? "Edit Delivery Address"
-            : "Add Delivery Address"}
-        </button>
+      <div className=" bg-[#252422] mb-6 border rounded-[11px]">
+        <div className="flex justify-between">
+          <h2 className="text-xl font-semibold mx-4 mt-6">
+            Delivery Information
+          </h2>{" "}
+          <button
+            onClick={() => setShowDeliveryModal(true)}
+            className="text-[#B67B0F]  px-4 py-2 my-4 mx-4"
+          >
+            {deliveryInfo.address
+              ? "Change"
+              : "Add"}
+          </button>
+        </div>
+        <hr className="mx-4" />
+
         {deliveryInfo.address && (
-          <div className="mt-4">
-            <p>Address: {deliveryInfo.address}</p>
-            <p>City: {deliveryInfo.city}</p>
-            <p>State: {deliveryInfo.state}</p>
+          <div className="mt-4 flex mx-4">
+            <p className= "my-2">{deliveryInfo.address},</p>
+            <p className= "my-2"> {deliveryInfo.city},</p>
+            <p className= "my-2">{deliveryInfo.state}.</p>
           </div>
         )}
       </div>
@@ -117,7 +128,7 @@ const Information = () => {
       {/* Clear Data Button (Optional) */}
       <button
         onClick={clearLocalStorage}
-        className="bg-[#B67B0F] text-white px-4 py-2 rounded hover:bg-[#A56C0D]"
+        className="bg-[#B67B0F] mx-4  text-white px-4 py-2 rounded hover:bg-[#A56C0D]"
       >
         Clear All Data
       </button>

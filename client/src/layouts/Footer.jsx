@@ -4,7 +4,7 @@ import eggylogo from "../assets/nav-logo.svg"
 const Footer = () => {
   return (
     <>
-      <main className="bg-[#100101]">
+      <main className="bg-[#100101] lg:px-[130px]">
         <footer className="wrapper">
           {/* section-1 for footer */}
           <section className="flex justify-between h-[159px] items-center">

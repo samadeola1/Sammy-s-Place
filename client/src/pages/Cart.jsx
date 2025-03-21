@@ -45,12 +45,10 @@ const Cart = () => {
   return (
     <>
       <div className="bg-[#2F2F2F] text-white">
-        {cart.length === 0 ? (
-          "No Cart Items "
-        ) : (
+        {cart.length === 0 ? <div className="flex text-2xl justify-center h-full items-center py-20"><h1>No Items in cart 🛒.  kindly check out our products😊</h1></div> : (
           <main className="bg-[#2F2F2F] py-5 mx-2">
             {/* section for  cart  */}
-            <section className="text-white wrapper grid lg:grid-cols-3 gap-[20px] ">
+            <section className="text-white wrapper grid lg:grid-cols-3 gap-[20px] lg:px-[130px] ">
               {/* div for  cart  */}
               <div className="lg:col-span-2 bg-black rounded-[8px] py-3 p-[15px]">
                 <h1 className="text-white border-b-[1px] border-b-white text-[24px] leading-[100%] p-[7px] ">
@@ -116,7 +114,7 @@ const Cart = () => {
                 </div>
               </div>
               {/* div for summary  */}
-              <div className="rounded-[10px] bg-black p-[15px] h-fit ">
+              <div className="rounded-[10px] bg-black p-[15px] h-fit  ">
                 <h2 className="text-[24px] leading-[100%] text-white py-4">
                   Summary
                 </h2>
@@ -160,8 +158,8 @@ const Cart = () => {
               </div>
             </section>
             {/* section for similar products */}
-            <section className="container mx-auto my-8 p-[15px]">
-              <h2 className="md:text-[24px] text-base text-white font-[500] py-4 leading-[100%]">
+            <section className="container mx-auto my-8 p-[15px] lg:px-[130px]">
+              <h2 className="md:text-[24px] text-base text-white font-[500] py-10 leading-[100%]">
                 Similar Products You Might Like
               </h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-[24px] text-white">
