@@ -12,8 +12,8 @@ const Category = () => {
     <>
       <main className="py-10">
         {/* Product Section */}
-        <section className="flex justify-between w-full rounded-[101px] bg-[#252422] p-6">
-          <div className="carousel carousel-center lg:w-full space-x-24 px-8">
+        <section className="flex justify-between rounded-[101px] bg-[#252422] p-6 lg:mx-[80px]">
+          <div className="carousel carousel-center lg:w-full space-x-16 px-8">
             <a
               onClick={() => setSelectedCategory(Burgers)}
               href="#burger"
@@ -84,7 +84,7 @@ const Category = () => {
         </section>
         {/* section-2 */}
         <section className="container mx-auto my-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 lg:gap-y-[54px] lg:gap-x-[15px] gap-[44.46px] md:w-full">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 lg:gap-y-[30px] lg:gap-x-[24px] gap-[44.46px] md:w-full lg:px-[100px]">
             {selectedCategorys.map((products) => {
               const { _id, image, title, ratingicon, rating, price, duration } =
                 products;

@@ -12,7 +12,7 @@ const Description = () => {
   const products = selectedCategorys.find((item) => item._id == id);
   const relatedProducts = selectedCategorys
     .filter((item) => item._id !== id)
-    .slice(10, 14);
+    .slice(10,16);
 
   return (
     <>
@@ -36,7 +36,8 @@ const Description = () => {
             <button
               className=" bg-[#B67B0F] leading-[100%] w-full cursor-pointer rounded-[31px] lg:whitespace-nowrap py-[15px] px-[56px] md:text-base"
               onClick={() => {
-                handleAddToCart(products), toast.success("An item added to Cart");
+                handleAddToCart(products),
+                  toast.success("An item added to Cart");
               }}
             >
               Add to Cart
@@ -44,8 +45,10 @@ const Description = () => {
           </div>
         </section>
         {/* Related Products */}
-        <section className="wrapper py-5">
-          <h2 className="text-2xl font-semibold mb-6">Others You Might Like</h2>
+        <section className="wrapper">
+          <h2 className="md:text-2xl text-3xl font-semibold md:mb-6 my-10">
+            Others You Might Like
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {relatedProducts.map((item) => (
               <div
@@ -55,9 +58,18 @@ const Description = () => {
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="rounded-lg mb-4"
+                  className="rounded-lg mb-4 w-full"
                 />
                 <h3 className="text-xl font-medium">{item.title}</h3>
+                <button
+                  className=" bg-[#B67B0F] leading-[100%] w-full cursor-pointer rounded-[31px] lg:whitespace-nowrap py-[15px] px-[56px] md:text-base"
+                  onClick={() => {
+                    handleAddToCart(products),
+                      toast.success("An item added to Cart");
+                  }}
+                >
+                  Add to Cart
+                </button>
               </div>
             ))}
           </div>

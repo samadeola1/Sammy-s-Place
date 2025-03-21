@@ -9,6 +9,8 @@ import { Toaster } from "sonner";
 import Cart from "./pages/Cart";
 import Description from "./pages/Description";
 import Order from "./pages/Order";
+import Payment from "./pages/Payment";
+import Sam from "./pages/Information";
 
 // const cartItemsFromLocalStorage =
 //   JSON.parse(localStorage.getItem("cart")) || [];
@@ -52,11 +54,13 @@ function App() {
           }
         >
           <Navbar />
+
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="cart" element={<Cart />}></Route>
+            <Route path="/cart" element={<Cart />}></Route>
             <Route path="/product/:id" element={<Description />}></Route>
-            <Route path="order" element={<Order/>}></Route>
+            <Route path="/order" element={<Order />}></Route>
+            <Route path="/payment" element={<Payment />}></Route>
           </Routes>
           <Footer />
         </Suspense>

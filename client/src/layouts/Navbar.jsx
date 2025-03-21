@@ -60,7 +60,7 @@ const Navbar = () => {
               {isLogin ? (
                 <div className="dropdown dropdown-center">
                   <div tabIndex={0} role="button" className="m-1 py-3">
-                    Hi Eggy's ⬇️
+                    Hi Eggy's
                   </div>
                   <ul
                     tabIndex={0}
@@ -69,14 +69,16 @@ const Navbar = () => {
                     <li>
                       <a>Account</a>
                     </li>
-                    <Link to="order">
+                    <Link to="/order">
                       <li>
                         <a>Order</a>
                       </li>
                     </Link>
-                    <li>
-                      <a>Menu</a>
-                    </li>
+                    <Link>
+                      <li>
+                        <a>Log Out</a>
+                      </li>
+                    </Link>
                   </ul>
                 </div>
               ) : (

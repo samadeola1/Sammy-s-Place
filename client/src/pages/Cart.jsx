@@ -1,9 +1,13 @@
 import React, { useContext } from "react";
-import { Burgers,combos,chickens,chips,salads } from "../product";
-import Vectordelete from "../assets/Bin-icon.svg"
+import { Burgers, combos, chickens, chips, salads } from "../product";
+import Vectordelete from "../assets/Bin-icon.svg";
 import CartContext from "../Context/CartContext";
+import { Link } from "react-router-dom";
+import { toast } from "sonner";
+
 
 const Cart = () => {
+  const { handleAddToCart } = useContext(CartContext);
   const { cart, setCart } = useContext(CartContext);
   console.log(cart);
   function handleRemove(cartId) {
@@ -44,7 +48,7 @@ const Cart = () => {
         {cart.length === 0 ? (
           "No Cart Items "
         ) : (
-          <main className="bg-[#2F2F2F]">
+          <main className="bg-[#2F2F2F] py-5 mx-2">
             {/* section for  cart  */}
             <section className="text-white wrapper grid lg:grid-cols-3 gap-[20px] ">
               {/* div for  cart  */}
@@ -146,11 +150,13 @@ const Cart = () => {
                   </div>
                 </div>
                 {/* div for button */}
-                <div className="py-4">
-                  <button className=" bg-[#B67B0F] leading-[100%] w-full rounded-[31px] lg:whitespace-nowrap py-[15px] px-[56px] md:text-base text-white">
-                    Check Out
-                  </button>
-                </div>
+                <Link to="/payment">
+                  <div className="py-4">
+                    <button className=" bg-[#B67B0F] leading-[100%] w-full rounded-[31px] lg:whitespace-nowrap py-[15px] px-[56px] md:text-base text-white">
+                      Check Out
+                    </button>
+                  </div>
+                </Link>
               </div>
             </section>
             {/* section for similar products */}
@@ -200,7 +206,13 @@ const Cart = () => {
                           </div>
                           {/* Add to Cart Div */}
                           <div className="card-actions justify-end">
-                            <button className=" bg-[#B67B0F] leading-[100%] w-full rounded-[31px] lg:whitespace-nowrap py-[15px] px-[56px] md:text-base">
+                            <button
+                              className=" bg-[#B67B0F] leading-[100%] w-full cursor-pointer rounded-[31px] lg:whitespace-nowrap py-[15px] px-[56px] md:text-base"
+                              onClick={() => {
+                                handleAddToCart(Burger),
+                                  toast.success("An item added to Cart");
+                              }}
+                            >
                               Add to Cart
                             </button>
                           </div>
